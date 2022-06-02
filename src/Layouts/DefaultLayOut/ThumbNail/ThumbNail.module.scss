@@ -1,0 +1,166 @@
+.Container {
+    width: 100%;
+    position: relative;
+    &Thumb{
+        width: 100%;
+        height:720px;
+        position: relative;
+        overflow: hidden;
+        &Img{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            object-fit: cover;
+            &Display{
+                display: none;
+            }
+        }
+    }
+
+
+}
+.ThumbVideo{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    
+    &Detail{
+        color:white;
+        padding-bottom: 30px;
+        width: 45%;
+        &Container{
+            position: absolute;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            padding-left: 4%;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            
+        }
+    }
+    &Heading{
+        padding-bottom: 30px;
+    }
+    &Name{
+        text-transform: uppercase;
+        font-size: 5rem;
+        font-family: Times, "Times New Roman";
+        transition: all 1s ease;
+        &Small{
+            font-size: 4rem;
+            padding: 3% 0;
+        }
+        &Sub{
+            font-size: 4rem;
+            transition: all 1s ease;
+            &Small{
+                font-size: 2.5rem;
+            }
+
+        }
+    }
+    &Desc{
+        font-size: 1.7rem;
+        transition: all 1s ease;
+        &Small{
+            display:none;
+        }
+    }
+    &Buttons {
+        display: flex;
+        justify-content:space-between;
+        color: black;
+        margin-top: 30px;
+        &Left{
+            display:flex;
+        }
+        
+    }
+    &Button {
+        padding:7px 25px;
+        // cursor: pointer;
+        background-color: red;
+        margin-bottom: 20px;
+        margin-right: 20px;
+        text-decoration: none;
+        border-radius:5px;
+        display: flex;
+        align-items: center;
+        &:hover{
+            opacity: 0.8;
+            cursor:pointer
+        }
+        &Icon{
+            font-size: 2.5rem;
+            transform: translateY(13%);
+            margin-right: 10px;
+        }
+        &Content{
+            font-size: 1.7rem;
+            font-weight: 500;
+        }
+        &Play{
+            background-color: #fff;
+        }
+        &Info{
+            background-color: rgba(120, 112, 112, 0.8);
+            color: white;
+        }
+
+    }
+
+}
+
+.ThumbSetting{
+    color: white;
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+    width: 100%;
+    &Container{
+        display:flex;
+        width: 15%;
+    }
+    &Hide{
+        display: none;
+    }
+    &Sound{
+        display:flex;
+        align-items: center;
+        font-size: 1.8rem;
+        padding: 10px;
+        background-color: transparent;
+        margin-right: 10px;
+        border-radius:100%;
+        border: 1px double white;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            cursor: not-allowed;
+        }
+    }
+    &TagAge{
+        max-width:100%;
+        min-width: 60%;
+        height: 100%;
+        max-height: 33px;
+        background-color:rgba(38, 37, 37, 0.4);
+        display:flex;
+        align-items:center;
+        border-left: 5px solid #fff;
+        font-size: 1.6rem;
+        padding-left: 15px;
+    }
+}
+
+.BoardContent{
+    margin: 3% 0;
+    padding-bottom: 90px;
+    width: 100%;
+    overflow:hidden;
+    transform: translateY(-170px);
+    left:0;
+    background-image:linear-gradient(to bottom, transparent 1%,#111 10% );
+
+}

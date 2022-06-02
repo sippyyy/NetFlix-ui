@@ -1,0 +1,93 @@
+.wrapper{
+    background-color: rgba(0,0,0,0.4);
+    position: fixed;
+    left:0;
+    right:0;
+    top:0;
+    bottom:0;
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    overflow-y:auto ;
+    font-size: 1.6rem;
+
+}
+.wrapperContainer{
+    margin-top: 20px;
+    width: 850px;
+    background-color: black;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.movieThumbnail{
+    width: 100%;
+}
+
+.container{
+    transform: translateY(-49%);
+    width: 100%;
+    color:#fff;
+    background: rgb(64,64,64);
+    background: linear-gradient(180deg, rgba(64,64,64,0) 0%, rgba(0,0,0,1) 42%);    padding:60px 40px;
+}
+
+
+.wrapperInfo{
+    width: 100%;
+    display: flex;
+}
+
+.Infomation{
+    width: 70%;
+    padding-right: 20px;
+    justify-content: center;
+}
+
+.infoTags{
+    display:flex;
+    align-items: center;
+    margin: 12.8px 0;
+}
+
+.infoText{
+    margin-right: 10px;
+}
+
+.green{
+    color:#45ce67;
+    font-weight: 600;
+}
+.tag{
+    margin-right: 10px;
+}
+
+.TagAge{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 10px;
+    padding: 0 8px;
+    border : 1px solid #fff;
+}
+.TagQuality{
+    border : 1px solid #fff;
+    font-size: 1rem;
+    height: 1.5rem;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+}
+
+.overview{
+    margin: 14px 0 7px 0;
+}
+
+.key{
+    font-size: 1.4rem;
+    color:#777;
+    font-weight: 700;
+}
+
+.value{
+
+}

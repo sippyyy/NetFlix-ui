@@ -1,0 +1,189 @@
+$TextColor : #afafaf;
+
+
+.FormContainer{
+    position:fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background:var(--background-color);
+    animation: SlideDown ease-in-out 0.5s;
+}
+.Form {
+    width: 35%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    &Header{
+        font-size: 5.2rem;
+        font-weight: 500;
+        line-height: 6rem;
+    }
+    &Body{
+        display: flex;
+        padding: 2.5rem 0;
+        width: 100%;
+        height: 100%;
+        &Left{
+            position: relative;
+            width: 110px;
+            height: 110px;
+
+        }
+        &Avatar{
+            width: 100%;
+            height: 100%;
+            border-radius:5px;
+        }
+        &EditAva{
+            position: absolute;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            left: 6px;
+            bottom: 5px;
+            font-size: 1.4rem;
+            font-weight: 600;
+            background-color: rgba(36, 33, 33, 0.5);
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+            color: $TextColor;
+            cursor: not-allowed;       
+        }
+        &Right{
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            margin: 0 20.5px;
+        }
+    }
+    &Block{
+        width: 100%;
+        &Separate{
+            width: 100%;
+            height: 1px;
+            background-color: rgba(255, 255, 255, 0.4);
+            margin-top: 8px;
+        }
+    }
+    &BodyInput{
+        height: 35px;
+        width: 100%;
+        background-color: rgba(255, 255, 255, 0.4);
+        outline: none;
+        color: white;
+        font-size: 1.7rem;
+        font-weight: 500;
+        padding: 8px;
+        border:none;
+        cursor: not-allowed;
+    }
+    &BodyTitle {
+        color: $TextColor;
+        font-size: 1.8rem;
+        margin: 10px 0 12px 0;
+        font-weight: 450;
+    }
+    &BodySelection{
+        margin-top: 10px;
+    }
+    &BodySelect{
+        height: 25px;
+        width: 35%;
+        background-color: #000;
+        color: white;
+        border: 1px solid white;
+        font-weight: 600;
+        padding: 0 10px;
+        cursor: pointer;
+        
+    }
+    &BodyContentBox{
+        padding: 6px 10px;
+        background-color:rgba(255, 255, 255, 0.2);
+        display:inline-block;
+        font-size: 1.4rem;
+        font-weight:500;
+        color: $TextColor;
+        margin: 10px 0;
+        cursor: not-allowed;
+    }
+    &BodyContent {
+        color: #99a1a7;
+        font-size: 1.4rem;
+
+    }
+    &BodyBtn {
+        padding: 5px 20px;
+        font-size: 1.6rem;
+        letter-spacing: 1.5px;
+        color: #717171;
+        border: 1px solid #717171;
+        display: inline-block;
+        margin: 13.4px 0;
+        cursor: not-allowed;
+    }
+    &CheckBox{
+       display: flex;
+       flex-direction: column; 
+       &Block{
+        display: flex;
+        align-items:flex-end;
+        margin: 0 0 13.4px 0;
+        }
+    }
+    &BodyCheckBox{
+        height: 30px;
+        width: 30px;
+        color: transparent;
+        cursor: not-allowed;
+
+    }
+    &Button{
+        display: flex;
+
+    }
+    &SaveBtn{
+        color:black;
+        background-color:white;
+        opacity: 0.4;
+        cursor: not-allowed;
+    }
+    &CancelBtn{
+        color: #717171;
+        border: 1px solid #717171;
+        &:hover {
+            border-color: white;
+            color: white;
+        }
+    }
+}
+.Button {
+    padding:8px 25px;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    font-weight: 500;
+    // cursor: pointer
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+@keyframes SlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px)
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

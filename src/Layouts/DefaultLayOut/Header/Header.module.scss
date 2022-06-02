@@ -1,0 +1,308 @@
+$NotiHeight : 96px;
+$ItemSeting: 40px;
+
+.Black{
+    background-color: #000;
+}
+
+
+.NavBar {
+    position: fixed;
+    display:flex;
+    justify-content: space-between;
+    height: 68px;
+    top: 0;
+    left: 0;
+    right: 18px;
+    padding: 0 4%;
+    color:#d5d3d3 ;
+    z-index: 8;
+    transition: all 0.4s ease;
+    &Left{
+        display: flex;
+        width: 30%;
+        margin-left: 140px;
+    }
+    &List{
+        display: flex;
+        width: 100%;
+        justify-content:flex-start;
+        align-items: center;
+        list-style: none;
+    }
+    &Item{
+        font-size: 1.4rem;
+        margin-right: 20px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.5);
+        &:hover {
+            opacity: 0.8;
+        }
+        &Active{
+            color: #fff;
+        }
+        &Icon{
+            font-size: 2.3rem;
+            padding:15px;
+            display: flex;
+            justify-content: flex-end;
+            &Search{
+                position: absolute;
+                left: -4px;
+                z-index: 10;
+            }
+        }
+    }
+    &Noti{
+        position: relative;
+        &::after{
+            content:"";
+            height: 25px;
+            width: 40px;
+            background-color:transparent;
+            position: absolute;
+            bottom: -6px;
+            right: 5px;
+        }
+    }
+    &Right{
+        display:flex;
+        justify-content:flex-end;
+        align-items: center;
+        list-style: none;
+        width: 40%;
+    }
+    &User{
+        display: flex;
+        padding: 15px;
+        align-items: center;
+        position: relative;
+        &:after{
+            Content:"";
+            height: 30px;
+            width: 71px;
+            background-color:transparent;
+            position:absolute;
+            right: 30px;
+            bottom:-8px;
+            
+        }
+        &Ava{
+            height: 33px;
+            width: 33px;
+            border-radius: 5px;
+        }
+        &Icon{
+            padding: 15px;
+            font-size: 1.4rem;
+            transition: all 0.2s ease;
+        }
+    }
+    &Find {
+
+        display: flex;
+        height: 33px;
+        width: 100%;
+        align-items: center;
+        justify-content: flex-end;
+        position: relative;
+        border: 0px solid #fff;
+        transform: translateX(80%);
+        transition: all 0.5s ease-in-out;
+        &Open{
+            transform: translateX(0);
+            border: 1px solid #fff;
+        }
+        &Container{
+            width: 45%;
+            overflow: hidden;
+            background-color: transparent;  
+            padding-right: 10px;
+        }
+        &Place {
+            height: 33px;
+            align-items: center;
+            justify-content: flex-end;
+            display: flex;
+            padding: 0 10px 0 43px;
+            background-color:transparent;
+            border-color:transparent;
+            color: white;
+            outline: none;
+            opacity: 1;
+            width: 100%;
+        }
+    }
+    &Noti{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        &Wrap{
+            width: 400px;
+            max-height: calc($NotiHeight*4);
+            position:absolute;
+            top: 60px;
+            right: 15px;
+            background-color: rgba(20, 20, 20, 0.8);
+            border-top: 1px solid #fff;
+            display:none;
+            &::before {
+                content:"";
+                width: 0; 
+                height: 0; 
+                border-left: 8px solid transparent;
+                border-right: 8px solid transparent;      
+                border-bottom: 8px solid rgb(252, 251, 251);
+                position:absolute;
+                top:-8px;
+                right: 4px;
+            }
+            
+        }
+
+        &Container{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            max-height: calc($NotiHeight*4);
+            overflow-y: auto;
+        }
+        &Block{
+            padding: 0 16px;
+            display: flex;
+            height: $NotiHeight;
+            width: 100%;
+            align-items: center;
+            padding: 19px;
+            position: relative;
+            &::after{
+                content:"";
+                width: 100%;
+                height: 1px;
+                background-color:rgba(167, 165, 165, 0.3);
+                position: absolute;
+                left:0;
+                bottom: 0;
+            }
+            &:last-child::after{
+                display: none;
+            }
+            &:hover{
+                background-color: #000;
+            }
+    
+        }
+        &Thumb{
+            width: 110px;
+            height: 65px;
+            object-fit: cover;
+            border-radius:5px;
+        }
+        &Content{
+            padding-left: 16px;
+        }
+        &Title{
+            font-size: 1.7rem;
+            font-weight: 400;
+        }
+        &Desc{
+            font-size: 1.25rem;
+            opacity: 0.8;
+        }
+    }
+}
+
+.NavBarNoti:hover .NavBarNotiWrap {
+    display:block;
+    animation: FadeIn ease-in 0.3s;
+}
+
+
+.Setting{
+    position:absolute;
+    top: 74px;
+    right:30px;
+    width: 190px;
+    max-height: 450px;
+    background-color: rgba(20, 20, 20, 0.8);
+    z-index: 100;
+    display:none;
+
+    &User{
+        position: relative;
+        padding: 10px 10px;
+
+        &:after{
+            content:"";
+            height: 1px;
+            width: 100%;
+            background-color:rgba(167, 165, 165, 0.3);
+            position:absolute;
+            left: 0;
+            bottom:0;
+        }
+        &List{
+            display:flex;
+            flex-direction:column;
+        }
+        &Item{
+            display:flex;
+            align-items: center;
+            height: $ItemSeting;
+            width: 100%;
+            margin: 3px 0;
+        }
+        &Ava{
+            height: 33px;
+            width: 33px;
+            border-radius: 5px;
+        }
+        &Text{
+            margin-left: 10px;
+            font-size: 1.4rem;
+            font-weight:500;
+            display:flex;
+            flex:1;
+            color:#d5d3d3 ;
+            text-decoration: none;
+            &:hover{
+                text-decoration: underline;
+            }
+            &SignOut{
+                margin:0;
+                justify-content: center;
+
+            }
+        }
+        &Icon{
+            font-size: 2.3rem;
+            height: 33px;
+            width: 33px;
+            display: flex;
+            justify-content:center;
+            transform: translateY(20%)
+        }
+    }
+}
+
+.NavBarUser:hover .Setting{
+    display:block;
+    animation: FadeIn ease-in 0.3s;
+}
+.NavBarUser:hover .NavBarUserIcon{
+    transform:rotate(180deg);
+}
+
+
+
+
+
+@keyframes FadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity:1;
+    }
+}
