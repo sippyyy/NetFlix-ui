@@ -1,0 +1,40 @@
+.wrapper{
+    margin-top: 48px;
+    color: white;
+}
+
+.titleWapper{
+    margin-bottom: 20px;
+    font-size:2.4rem;
+    display: flex;
+    align-items: center;
+}
+
+.title{
+    font-weight: 400;
+    margin-right: 10px;
+}
+
+.movieName{
+    font-weight: 600;
+}
+
+.infoBlock{
+    display: flex;
+    font-size: 1.4rem;
+    line-height: 20px;
+    margin-bottom: 1%;
+}
+
+.key{
+    color: gray;
+    margin-right: 10px;
+}
+
+.TagAge{
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-right: 10px;
+    padding: 0 8px;
+    border : 1px solid #fff;
+}
