@@ -1,3 +1,4 @@
+import {memo} from 'react'
 import clsx from "clsx"
 
 import style from './BasicInfo.module.scss'
@@ -34,4 +35,4 @@ function BasicInfo({data,genres,info}) {
      );
 }
 
-export default BasicInfo;
+export default memo(BasicInfo);

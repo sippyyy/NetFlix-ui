@@ -1,77 +1,60 @@
 import clsx from 'clsx'
+import {useEffect,useState,memo} from 'react'
 
 import { BsPlusCircle } from "@react-icons/all-files/bs/BsPlusCircle";
 
 
 
 import style from './Recommend.module.scss' 
-import pic from '~/img/user.jpg'
+import request from '~/utils/httpRequest'
 
+const imgUrl = process.env.REACT_APP_ORIGINAL_IMG
 
 function Recommend({data}) {
+
+    const [recommend,setRecommend] = useState([])
+
+    useEffect(()=>{
+        if(data.id){
+            request.get(`/movie/${data.id}/similar`,{
+                params:{
+                    api_key:process.env.REACT_APP_API_KEY,
+                    language:'en-US'
+                }
+            })
+            .then(res=>setRecommend(res.data.results))
+        }
+    },[data])
+
+
+    
     return ( 
         <div className={clsx(style.wrapper)}>
             <h3 className={clsx(style.title)}>More Like This</h3>
             <div className={clsx(style.moviesWrapper)}>
 
-                <div className={clsx(style.block)}>
-                    <img className={clsx(style.image)} alt='' src={pic}/>
+                {recommend.map((movie,index)=>(
+                <div key={index} className={clsx(style.block)}>
+                    <img className={clsx(style.image)} alt='' src={`${imgUrl}${movie.backdrop_path}`}/>
                     <div className={clsx(style.content)}>
                         <div className={clsx(style.tags)}>
                             <div className={clsx(style.leftTags)}>
-                                <span className={clsx(style.TagAge)}>16+</span>
-                                <span className={clsx(style.name)}>Lorem</span>
+                                {movie.adult === true && <span className={clsx(style.TagAge)}>16+</span>}
+                                {movie.adult === false && <span className={clsx(style.TagAge)}>13+</span>}
+                                <span className={clsx(style.name)}>{movie.title}</span>
                             </div>
                             <span className={clsx(style.icon)}><BsPlusCircle/></span>
                         </div>
-                        <span className={clsx(style.desc)}>Lorem</span>
-                    </div>
-                </div>
+                            {movie.overview.length <= 170 && <span className={clsx(style.desc)}>{movie.overview}</span>}
+                            {movie.overview.length > 170 && <span className={clsx(style.desc)}>{movie.overview.slice(0,150)}...</span>}
 
-                <div className={clsx(style.block)}>
-                    <img className={clsx(style.image)} alt='' src={pic}/>
-                    <div className={clsx(style.content)}>
-                        <div className={clsx(style.tags)}>
-                            <div className={clsx(style.leftTags)}>
-                                <span className={clsx(style.TagAge)}>16+</span>
-                                <span className={clsx(style.name)}>Lorem</span>
-                            </div>
-                            <span className={clsx(style.icon)}><BsPlusCircle/></span>
-                        </div>
-                        <span className={clsx(style.desc)}>Lorem</span>
                     </div>
                 </div>
-
-                <div className={clsx(style.block)}>
-                    <img className={clsx(style.image)} alt='' src={pic}/>
-                    <div className={clsx(style.content)}>
-                        <div className={clsx(style.tags)}>
-                            <div className={clsx(style.leftTags)}>
-                                <span className={clsx(style.TagAge)}>16+</span>
-                                <span className={clsx(style.name)}>Lorem</span>
-                            </div>
-                            <span className={clsx(style.icon)}><BsPlusCircle/></span>
-                        </div>
-                        <span className={clsx(style.desc)}>Lorem</span>
-                    </div>
-                </div>
-
-                <div className={clsx(style.block)}>
-                    <img className={clsx(style.image)} alt='' src={pic}/>
-                    <div className={clsx(style.content)}>
-                        <div className={clsx(style.tags)}>
-                            <div className={clsx(style.leftTags)}>
-                                <span className={clsx(style.TagAge)}>16+</span>
-                                <span className={clsx(style.name)}>Lorem</span>
-                            </div>
-                            <span className={clsx(style.icon)}><BsPlusCircle/></span>
-                        </div>
-                        <span className={clsx(style.desc)}>Lorem</span>
-                    </div>
-                </div>
+                ))}
+                
             </div>
         </div>
      );
 }
 
-export default Recommend;
+export default memo(Recommend);

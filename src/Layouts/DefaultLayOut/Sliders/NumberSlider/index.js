@@ -1,5 +1,5 @@
 
-import{useEffect,useState} from 'react'
+import{useEffect,useState,memo} from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import clsx from 'clsx';
 
@@ -75,4 +75,4 @@ function NumberSlider({path}) {
      );
 }
 
-export default NumberSlider;
+export default memo(NumberSlider);

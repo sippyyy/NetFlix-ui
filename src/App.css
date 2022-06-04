@@ -10,6 +10,13 @@ html {
 
 :root{
     --background-color: linear-gradient(to bottom,#000 1%,#141414 99%);
+    --text-gray-color: gray;
+    --text-size: 1.4rem;
+    --text-name-title: 1.6rem;
+    --padding-40px: 40px;
+    --padding-title: 20px;
+    --font-weight-title: 600;
+    --padding-content: 16px;
 }
 
 body {
@@ -21,12 +28,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   min-height: 1000px;
   background-color: #000;
+  font-size: var(--text-size)
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 
 a {
   text-decoration: none;

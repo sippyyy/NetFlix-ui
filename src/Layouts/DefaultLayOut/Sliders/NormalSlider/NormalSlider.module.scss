@@ -22,7 +22,7 @@
   &Tag{
       font-size:1.1rem;
       line-height: 1.1rem;
-      font-weight: 600;
+      font-weight: var(--font-weight-title);
       text-transform:UPPERCASE;
       padding: 0px 8px;
       height: 21px;

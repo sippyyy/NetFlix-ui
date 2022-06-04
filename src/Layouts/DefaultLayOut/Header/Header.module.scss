@@ -31,7 +31,7 @@ $ItemSeting: 40px;
         list-style: none;
     }
     &Item{
-        font-size: 1.4rem;
+        // font-size: 1.4rem;
         margin-right: 20px;
         font-weight: 500;
         color: rgba(255,255,255,0.5);
@@ -94,7 +94,7 @@ $ItemSeting: 40px;
         }
         &Icon{
             padding: 15px;
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
             transition: all 0.2s ease;
         }
     }
@@ -169,7 +169,7 @@ $ItemSeting: 40px;
             overflow-y: auto;
         }
         &Block{
-            padding: 0 16px;
+            padding: 0 var(--padding-content);
             display: flex;
             height: $NotiHeight;
             width: 100%;
@@ -200,7 +200,7 @@ $ItemSeting: 40px;
             border-radius:5px;
         }
         &Content{
-            padding-left: 16px;
+            padding-left: var(--padding-content);
         }
         &Title{
             font-size: 1.7rem;
@@ -260,7 +260,7 @@ $ItemSeting: 40px;
         }
         &Text{
             margin-left: 10px;
-            font-size: 1.4rem;
+            // font-size: 1.4rem;
             font-weight:500;
             display:flex;
             flex:1;

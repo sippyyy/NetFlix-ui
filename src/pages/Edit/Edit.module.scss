@@ -48,8 +48,8 @@ $TextColor : #afafaf;
             align-items:center;
             left: 6px;
             bottom: 5px;
-            font-size: 1.4rem;
-            font-weight: 600;
+            // font-size: 1.4rem;
+            font-weight: var(--font-weight-title);
             background-color: rgba(36, 33, 33, 0.5);
             width: 30px;
             height: 30px;
@@ -100,7 +100,7 @@ $TextColor : #afafaf;
         background-color: #000;
         color: white;
         border: 1px solid white;
-        font-weight: 600;
+        font-weight: var(--font-weight-title);
         padding: 0 10px;
         cursor: pointer;
         
@@ -109,7 +109,7 @@ $TextColor : #afafaf;
         padding: 6px 10px;
         background-color:rgba(255, 255, 255, 0.2);
         display:inline-block;
-        font-size: 1.4rem;
+        // font-size: 1.4rem;
         font-weight:500;
         color: $TextColor;
         margin: 10px 0;
@@ -117,12 +117,12 @@ $TextColor : #afafaf;
     }
     &BodyContent {
         color: #99a1a7;
-        font-size: 1.4rem;
+        // font-size: 1.4rem;
 
     }
     &BodyBtn {
-        padding: 5px 20px;
-        font-size: 1.6rem;
+        padding: 5px var(--padding-title);
+        font-size: var(--text-name-title);
         letter-spacing: 1.5px;
         color: #717171;
         border: 1px solid #717171;

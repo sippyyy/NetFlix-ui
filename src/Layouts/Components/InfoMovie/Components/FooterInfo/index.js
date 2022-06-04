@@ -1,11 +1,10 @@
 
-import {useEffect,useState} from 'react'
+import {useEffect,useState,memo} from 'react'
 import clsx from 'clsx'
 import style from './FooterInfo.module.scss'
 
 
 function FooterInfo({data,genre,info}){
-    console.log(info)
     const [companies,setCompanies] =useState('')
     useEffect(()=>{
         if(info.id){
@@ -59,4 +58,4 @@ function FooterInfo({data,genre,info}){
     )
 }
 
-export default FooterInfo
+export default memo(FooterInfo)

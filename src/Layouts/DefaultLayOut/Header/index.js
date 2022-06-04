@@ -1,4 +1,4 @@
-import {useState,useContext} from 'react'
+import {useState,useContext,memo} from 'react'
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
 
@@ -27,23 +27,7 @@ const Items =[
         id: 2,
         nav: 'TV Shows',
         path: '/tvshows',
-    },
-    // {
-    //     id: 3,
-    //     nav: 'Movies',
-    //     path: '/movies'
-    // },
-    // {
-    //     id: 4,
-    //     nav: 'New & Popular',
-    //     path: '/newpopular'
-    // },
-    // {
-    //     id: 5,
-    //     nav: 'My List',
-    //     path: '/mylist'
-    // },
-    
+    }
     
 ]
 
@@ -155,4 +139,4 @@ function Header(background) {
      );
 }
 
-export default Header;
+export default memo(Header);

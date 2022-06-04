@@ -24,11 +24,13 @@ function ThumbNail({path,prefix,backfix}) {
     const [rePlay,setReplay] = useState(false)
     const [currentMovie,setCurrentMovie] = useState('')
     const [trailer,setTrailer] = useState ('')
+    const [open,setOpen] = useState(false)
     const refName = useRef()
     
     // const handleVolume = ()=>{
     //     setMute(mute === 1 ? 0 : 1)
     // }
+
     
     useEffect(()=>{
         request.get(path,{
@@ -123,10 +125,10 @@ function ThumbNail({path,prefix,backfix}) {
                         </div>
                         <div className={clsx(style.ThumbVideoButton,style.ThumbVideoButtonInfo)}>
                             <span className={clsx(style.ThumbVideoButtonIcon)}> <FaInfoCircle /> </span>
-                            <span className={clsx(style.ThumbVideoButtonContent)}>More Info</span>
+                            <span onClick={()=> setOpen(true)} className={clsx(style.ThumbVideoButtonContent)}>More Info</span>
                         </div>
                     </div>
-                        <InfoMovie data={currentMovie}></InfoMovie>
+                    {open === true && <InfoMovie setOpen={setOpen} status={open}  data={currentMovie}></InfoMovie>}
                     <div className={clsx(style.ThumbSettingContainer)}>
                         <div className={clsx(style.ThumbSetting,{
                             [style.ThumbSettingHide]: rePlay === false

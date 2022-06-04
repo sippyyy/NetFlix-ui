@@ -1,5 +1,5 @@
 
-import{useEffect,useState} from 'react'
+import{useEffect,useState,memo} from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
 import clsx from 'clsx';
 
@@ -71,4 +71,4 @@ function NormalSlider({path}) {
      );
 }
 
-export default NormalSlider;
+export default memo(NormalSlider);

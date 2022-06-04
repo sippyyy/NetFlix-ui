@@ -2,7 +2,9 @@
 import clsx from "clsx"
 
 
-import {useEffect, useState} from 'react'
+import {useEffect, useState,useRef,memo} from 'react'
+import { IoMdCloseCircle } from "@react-icons/all-files/io/IoMdCloseCircle";
+
 
 
 import style from './InfoMovie.module.scss'
@@ -13,9 +15,10 @@ import FooterInfo from './Components/FooterInfo'
 
 const baseImgURL= process.env.REACT_APP_ORIGINAL_IMG
 
-function InfoMovie({data}){
+function InfoMovie({data,setOpen}){
     const [genres,setGenres] = useState([])
     const [info,setInfo] = useState([])
+    const blockRef = useRef()
 
     useEffect(()=>{
         request.get('/genre/movie/list',{
@@ -57,16 +60,26 @@ function InfoMovie({data}){
         }
     },[data])
 
+    const handleClose = ()=>{
+            setOpen(false)
+    }
 
+    const handleCloseOther=(e)=>{
+        e.stopPropagation()
+        if(e.target === blockRef.current){
+            setOpen(false)
+    }
+}
 
 
     return(
-        <div className={clsx(style.wrapper)}>
+        <div ref={blockRef} onClick={(e)=>handleCloseOther(e)} className={clsx(style.wrapper)}>
             <div className={clsx(style.wrapperContainer)}>
                 <img className={clsx(style.movieThumbnail)} alt='' src={`${baseImgURL}${data.backdrop_path}`}></img>
+                <span onClick={handleClose} className={clsx(style.closeBtn)}><IoMdCloseCircle /></span>  
                 <div className={clsx(style.container)}>
                     <BasicInfo data={data} genres={genres} info={info} />
-                    <Recommend />
+                    <Recommend data={data} />
                     <FooterInfo data={data} genre={genres} info={info} />
                 </div>
             </div>
@@ -74,4 +87,4 @@ function InfoMovie({data}){
     )
 }
 
-export default InfoMovie
+export default memo(InfoMovie)
