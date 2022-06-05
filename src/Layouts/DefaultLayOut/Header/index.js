@@ -2,7 +2,6 @@ import {useState,useContext,memo} from 'react'
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
 
-import { FaSearch} from '@react-icons/all-files/fa/FaSearch';
 import {FaBell} from '@react-icons/all-files/fa/FaBell';
 import {FaPencilAlt} from '@react-icons/all-files/fa/FaPencilAlt';
 import {FaChevronDown} from '@react-icons/all-files/fa/FaChevronDown';
@@ -13,8 +12,7 @@ import {FaRegQuestionCircle} from '@react-icons/all-files/fa/FaRegQuestionCircle
 
 import style from './Header.module.scss'
 import Context from '~/Context'
-import Home from '~/pages/Home';
-import TvShow from '~/pages/TvShows';
+import SearchBar from '~/Layouts/Components/SearchBar';
 
 
 const Items =[
@@ -33,12 +31,9 @@ const Items =[
 
 
 function Header(background) {
-    const [openInput,setOpenInput] = useState(false)
     const [active,setActive] = useState('')
 
-    const handleOpenSearch = ()=>{
-        setOpenInput(openInput === false ? true : false)
-    }
+
     const users = useContext(Context)
     const user  = users[0]
 
@@ -65,17 +60,7 @@ function Header(background) {
                 </ul>
             </div>
             <div className ={clsx(style.NavBarRight)}>
-                <div className ={clsx(style.NavBarFindContainer)}>
-                    <div className ={clsx(style.NavBarFind,{
-                        [style.NavBarFindOpen] : openInput === true
-                    })}>
-                        <p onClick ={handleOpenSearch} className ={clsx(style.NavBarItemIcon,{
-                            [ style.NavBarItemIconSearch]: openInput === true
-                        })}><FaSearch /></p>
-                        
-                            <input className ={clsx(style.NavBarFindPlace)} placeholder="Titles,people,genres..."/>
-                    </div>
-                </div>
+               <SearchBar />
                 <div className ={clsx(style.NavBarNoti)}>
                     <p className ={clsx(style.NavBarItemIcon,style.NavBarItemIconNoti)}><FaBell /></p>
                     <div className ={clsx(style.NavBarNotiWrap)}>

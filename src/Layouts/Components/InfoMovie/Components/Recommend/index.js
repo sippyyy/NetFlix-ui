@@ -12,6 +12,8 @@ const imgUrl = process.env.REACT_APP_ORIGINAL_IMG
 
 function Recommend({data}) {
 
+    console.log(data)
+
     const [recommend,setRecommend] = useState([])
 
     useEffect(()=>{

@@ -17,6 +17,7 @@ html {
     --padding-title: 20px;
     --font-weight-title: 600;
     --padding-content: 16px;
+    --margin-container: 150px;
 }
 
 body {

@@ -1,7 +1,6 @@
 
 import{useEffect,useState,memo} from 'react'
 import { Swiper, SwiperSlide } from "swiper/react";
-import clsx from 'clsx';
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -11,9 +10,7 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper";
 
 import request from '~/utils/httpRequest';
-import style from './NormalSlider.module.scss'
-import {baseImgURL} from '~/Layouts/DefaultLayOut/ThumbNail'
-import PreviewWindow from '~/Layouts/Components/PreviewWindow';
+import MovieBlock from '~/Layouts/Components/MovieBlock';
 function NormalSlider({path}) {
 
     const[list,setList] = useState([])
@@ -56,14 +53,7 @@ function NormalSlider({path}) {
             >
                 {list.map((movie,index)=>(
                     <SwiperSlide key={index}>
-                        <div className={clsx(style.SliderBlock)}>
-                            <img className={clsx(style.SliderThumb)} src={`${baseImgURL}${movie.backdrop_path}`} alt="" />
-                            <div  className={clsx(style.SliderTags)}>
-                                <span className={clsx(style.SliderTag,style.SliderTagRed)}>new episode</span>
-                                <span className={clsx(style.SliderTag,style.SliderTagWhite)}>weekly</span>
-                            </div>
-                            <PreviewWindow thumb={movie} />
-                        </div>
+                        <MovieBlock movie={movie} />
                     </SwiperSlide>
                 ))}
             </Swiper>

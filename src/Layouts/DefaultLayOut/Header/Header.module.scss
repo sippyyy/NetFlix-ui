@@ -46,11 +46,6 @@ $ItemSeting: 40px;
             padding:15px;
             display: flex;
             justify-content: flex-end;
-            &Search{
-                position: absolute;
-                left: -4px;
-                z-index: 10;
-            }
         }
     }
     &Noti{
@@ -98,41 +93,7 @@ $ItemSeting: 40px;
             transition: all 0.2s ease;
         }
     }
-    &Find {
 
-        display: flex;
-        height: 33px;
-        width: 100%;
-        align-items: center;
-        justify-content: flex-end;
-        position: relative;
-        border: 0px solid #fff;
-        transform: translateX(80%);
-        transition: all 0.5s ease-in-out;
-        &Open{
-            transform: translateX(0);
-            border: 1px solid #fff;
-        }
-        &Container{
-            width: 45%;
-            overflow: hidden;
-            background-color: transparent;  
-            padding-right: 10px;
-        }
-        &Place {
-            height: 33px;
-            align-items: center;
-            justify-content: flex-end;
-            display: flex;
-            padding: 0 10px 0 43px;
-            background-color:transparent;
-            border-color:transparent;
-            color: white;
-            outline: none;
-            opacity: 1;
-            width: 100%;
-        }
-    }
     &Noti{
         position: relative;
         display: flex;

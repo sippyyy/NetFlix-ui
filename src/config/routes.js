@@ -3,6 +3,6 @@ const routes = {
     edit: '/edit',
     home: '/home',
     tvshows: '/tvshows',
-    search: '/search',
+    search:'/search',
 }
 export default routes
