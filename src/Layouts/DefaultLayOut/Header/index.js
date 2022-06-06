@@ -1,4 +1,4 @@
-import {useState,useContext,memo} from 'react'
+import {useState,useContext,memo, useEffect} from 'react'
 import clsx from 'clsx'
 import {Link} from 'react-router-dom'
 
@@ -25,23 +25,43 @@ const Items =[
         id: 2,
         nav: 'TV Shows',
         path: '/tvshows',
+    },
+    {
+        id:3,
+        nav:'Discover',
+        path:'/discover'
     }
     
 ]
 
 
-function Header(background) {
+
+function Header() {
     const [active,setActive] = useState('')
-
-
+    
+    
     const users = useContext(Context)
     const user  = users[0]
-
+    const [scroll,setScroll]= useState(0) 
+    const [visible,setVisible] = useState(false)
+    
+    
+    
+        useEffect(()=>{
+            if(scroll > 100){
+                setVisible(true)
+            }else{
+                setVisible(false)
+            }
+            window.addEventListener("scroll",event=>{
+                setScroll(window.scrollY)
+            })
+        })
 
 
     return ( 
         <div className ={clsx(style.NavBar,{
-            [style.Black] : background.background === true
+            [style.Black] : visible === true
         })}>
     
             <div className ={clsx(style.NavBarLeft)}>

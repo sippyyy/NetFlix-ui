@@ -1,0 +1,17 @@
+.wrapperContainer{
+    margin:var(--margin-container) 0px;
+    padding: 0 4%;
+}
+
+
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.title{
+    color: #fff;
+    padding-bottom: var(--padding-title)
+}

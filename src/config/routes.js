@@ -4,5 +4,6 @@ const routes = {
     home: '/home',
     tvshows: '/tvshows',
     search:'/search',
+    discover:'/discover'
 }
 export default routes

@@ -107,7 +107,7 @@ function ThumbNail({path,prefix,backfix}) {
                     <div className={clsx(style.ThumbVideoHeading)}>
                     <h2 className={clsx(style.ThumbVideoName,{
                         [style.ThumbVideoNameSmall]: play===true
-                    })}>{currentMovie.original_title}</h2>
+                    })}>{currentMovie.title}</h2>
                     <h3 className={clsx(style.ThumbVideoNameSub,{
                         [style.ThumbVideoNameSubSmall] :play===true
                     })}>{currentMovie.original_title || currentMovie.original_name}</h3>

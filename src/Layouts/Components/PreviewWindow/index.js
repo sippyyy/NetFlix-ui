@@ -64,10 +64,10 @@ function PreviewWindow({thumb}) {
           <img  className={clsx(style.ReviewImg,{
             [style.ReviewHide] : play === true
           })} src={`https://www.themoviedb.org/t/p/original${thumb.backdrop_path}`} alt="" />
-          {/* <iframe title="netflix" className={clsx(style.ReviewVideo,{
+          <iframe title="netflix" className={clsx(style.ReviewVideo,{
             [style.ReviewHide] : play === false
             })} src={`https://www.youtube.com/embed/${trailer.key}?autoplay=${pause}&mute=1&showinfo=0`} frameBorder="0">
-          </iframe> */}
+          </iframe>
     
         </div>
         <div className={clsx(style.ReviewContent)}>

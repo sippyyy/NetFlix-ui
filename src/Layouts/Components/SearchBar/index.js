@@ -22,9 +22,11 @@ function SearchBar() {
 
     const handleOpenSearch = ()=>{
         setOpenInput(openInput === false ? true : false)
-        setPath('/home')
-        inputRef.current.click()
-        dispatch(setJob(''))
+        if(openInput === true){
+            setPath('/home')
+            inputRef.current.click()
+            dispatch(setJob(''))
+        }
 
     }
     
@@ -34,7 +36,7 @@ function SearchBar() {
     
     const length = state.value.length
     useEffect(()=>{
-        if(length < 1){
+        if(length < 1 && openInput === true){
             setPath('/home')
             inputRef.current.click()
     
