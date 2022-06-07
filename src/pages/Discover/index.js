@@ -26,8 +26,8 @@ function Discover() {
         <div className={clsx(style.wrapperContainer)}>
             <h2 className={clsx(style.title)}>Discover The Most Popular Movies Today</h2>
             <div className={clsx(style.wrapper)}>
-                {list.map((element)=>(
-                    <MovieBlock movie={element} />
+                {list.map((element,index)=>(
+                    <MovieBlock key={index} movie={element} />
                 ))}
             </div>
         </div>

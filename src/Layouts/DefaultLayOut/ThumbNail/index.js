@@ -89,9 +89,11 @@ function ThumbNail({path,prefix,backfix}) {
  return(
     <div className={clsx(style.Container)}>
         <div className={clsx(style.ContainerThumb)}>
-            <img className={clsx(style.ContainerThumbImg,{
+
+            {currentMovie.backdrop_path && <img className={clsx(style.ContainerThumbImg,{
                 [style.ContainerThumbImgDisplay] : play === true
-            })} src={`${baseImgURL}${currentMovie.backdrop_path}`} alt="" />
+            })} src={`${baseImgURL}${currentMovie.backdrop_path}`} alt="" /> }
+
             
             <iframe 
                 className={clsx(style.ThumbVideo)} ref={refName} 
