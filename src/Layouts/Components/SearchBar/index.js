@@ -24,7 +24,6 @@ function SearchBar() {
         setOpenInput(openInput === false ? true : false)
         if(openInput === true){
             setPath('/home')
-            inputRef.current.click()
             dispatch(setJob(''))
         }
 
@@ -56,7 +55,7 @@ function SearchBar() {
             })}>
                 <p onClick ={handleOpenSearch} className ={clsx(style.NavBarItemIcon,{
                     [ style.NavBarItemIconSearch]: openInput === true
-                })}>{openInput === false && <FaSearch />}{openInput=== true && <IoIosClose/>}</p>
+                })}>{openInput === false && <FaSearch />}{openInput=== true && <Link className ={clsx(style.NavBarFindClose)} to='/home'><IoIosClose/></Link>}</p>
                 
                 <Link to={path}>
                 <input value={state.value} ref={inputRef} onChange={(e)=>handleOnChange(e)} className ={clsx(style.NavBarFindPlace,{
