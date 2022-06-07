@@ -13,7 +13,7 @@ import request from '~/utils/httpRequest'
 import style from './ThumbNail.module.scss'
 import InfoMovie from '~/Layouts/Components/InfoMovie';
 
-export const baseImgURL = process.env.REACT_APP_ORIGINAL_IMG
+export const baseImgURL = 'https://image.tmdb.org/t/p/original'
 
 function ThumbNail({path,prefix,backfix}) {
 

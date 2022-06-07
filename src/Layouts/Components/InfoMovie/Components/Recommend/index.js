@@ -20,7 +20,7 @@ function Recommend({data}) {
         if(data.id){
             request.get(`/movie/${data.id}/similar`,{
                 params:{
-                    api_key:process.env.REACT_APP_API_KEY,
+                    api_key:'b2a1fd40807ef235498cc7e7fb8f529f',
                     language:'en-US'
                 }
             })

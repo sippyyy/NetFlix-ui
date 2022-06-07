@@ -13,7 +13,7 @@ import BasicInfo from './Components/BasicInfo'
 import Recommend from './Components/Recommend'
 import FooterInfo from './Components/FooterInfo'
 
-const baseImgURL= process.env.REACT_APP_ORIGINAL_IMG
+const baseImgURL= 'https://image.tmdb.org/t/p/original'
 
 function InfoMovie({data,setOpen}){
     const [genres,setGenres] = useState([])
@@ -23,7 +23,7 @@ function InfoMovie({data,setOpen}){
     useEffect(()=>{
         request.get('/genre/movie/list',{
             params:{
-                api_key:process.env.REACT_APP_API_KEY,
+                api_key:'b2a1fd40807ef235498cc7e7fb8f529f',
                 language:'en-US'
             }
         })
@@ -52,7 +52,7 @@ function InfoMovie({data,setOpen}){
         if(data){
             request.get(`/movie/${data.id}`,{
                 params:{
-                    api_key:process.env.REACT_APP_API_KEY,
+                    api_key:'b2a1fd40807ef235498cc7e7fb8f529f',
                     language:'en-US'
                 }
             })

@@ -31,7 +31,7 @@ function Home() {
             <div className={clsx(style.thumbnail)} >
                     <ThumbNail path="movie/upcoming" prefix="/movie/" backfix="/videos"></ThumbNail>
             </div>
-            <div className={clsx(style.sildersWrapper)}>
+            {/* <div className={clsx(style.sildersWrapper)}>
                 {bucketList.map((list,index)=>(
                     <div key={index} className={clsx(style.sliderContainer)}>
                         <h2 className={style.titleSlider}>{list.title}</h2>
@@ -39,7 +39,7 @@ function Home() {
                     </div>
                 ))}
                 <NumberSlider path="/movie/upcoming"/>
-            </div>
+            </div> */}
         </>
      );
 }

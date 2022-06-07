@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import style from './MovieBlock.module.scss'
 import PreviewWindow from '../PreviewWindow';
 
-const baseImgURL =  process.env.REACT_APP_ORIGINAL_IMG
+const baseImgURL =  'https://image.tmdb.org/t/p/original'
 
 function MovieBlock({movie}) {
     return ( 
