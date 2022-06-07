@@ -8,7 +8,7 @@ import { BsPlusCircle } from "@react-icons/all-files/bs/BsPlusCircle";
 import style from './Recommend.module.scss' 
 import request from '~/utils/httpRequest'
 
-const imgUrl = process.env.REACT_APP_ORIGINAL_IMG
+const imgUrl = 'https://image.tmdb.org/t/p/original'
 
 function Recommend({data}) {
 

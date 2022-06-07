@@ -13,7 +13,7 @@ function Discover() {
     useEffect(()=>{
         request.get('/discover/movie',{
             params:{
-                api_key:process.env.REACT_APP_API_KEY,
+                api_key:'b2a1fd40807ef235498cc7e7fb8f529f',
                 language:'en-US',
                 sort_by:'popularity.desc'
             }

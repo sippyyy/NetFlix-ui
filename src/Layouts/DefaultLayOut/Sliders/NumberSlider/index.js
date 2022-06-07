@@ -21,7 +21,7 @@ function NumberSlider({path}) {
     useEffect(()=>{
         request.get(path,{
             params:{
-                api_key:process.env.REACT_APP_API_KEY,
+                api_key:'b2a1fd40807ef235498cc7e7fb8f529f',
                 language:'en-US'
             }
         })
