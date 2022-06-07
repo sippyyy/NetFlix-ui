@@ -28,7 +28,7 @@ const bucketList = [
 function Home() {
     return ( 
         <>
-            {/* <div className={clsx(style.thumbnail)} >
+            <div className={clsx(style.thumbnail)} >
                     <ThumbNail path="movie/upcoming" prefix="/movie/" backfix="/videos"></ThumbNail>
             </div>
             <div className={clsx(style.sildersWrapper)}>
@@ -39,7 +39,7 @@ function Home() {
                     </div>
                 ))}
                 <NumberSlider path="/movie/upcoming"/>
-            </div> */}
+            </div>
         </>
      );
 }
