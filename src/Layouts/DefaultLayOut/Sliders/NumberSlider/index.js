@@ -14,7 +14,7 @@ import request from '~/utils/httpRequest';
 import style from './NumberSlider.module.scss'
 import {baseImgURL} from '~/Layouts/DefaultLayOut/ThumbNail'
 import PreviewWindow from '~/Layouts/Components/PreviewWindow';
-function NumberSlider({path}) {
+function NumberSlider({path,type}) {
 
     const[list,setList] = useState([])
 
@@ -65,7 +65,7 @@ function NumberSlider({path}) {
                                     <span className={clsx(style.Tag,style.SliderTagRed)}>new episodes</span>
                                     <span className={clsx(style.Tag,style.SliderTagWhite)}>Weekly</span>
                                 </div>
-                                <PreviewWindow thumb={movie} />
+                                <PreviewWindow thumb={movie} type={type} />
                             </div>
                         </div>
                     </SwiperSlide>

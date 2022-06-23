@@ -9,19 +9,24 @@ import NumberSlider from '~/Layouts/DefaultLayOut/Sliders/NumberSlider';
 const bucketList = [
     {
         title:'Now Playing',
-        path:'/movie/now_playing'
+        path:'/movie/now_playing',
+        type:'movie'
     },
     {
         title:'Popular',
-        path:'/movie/popular'
+        path:'/movie/popular',
+        type:'movie'
     },
     {
         title:'Upcoming',
-        path:'/movie/upcoming'
+        path:'/movie/upcoming',
+        type:'movie'
+
     },
     {
         title:'Top 10 Rated',
-        path:'/movie/top_rated'
+        path:'/movie/top_rated',
+        type:'movie'
     },
 ]
 
@@ -35,10 +40,10 @@ function Home() {
                 {bucketList.map((list,index)=>(
                     <div key={index} className={clsx(style.sliderContainer)}>
                         <h2 className={style.titleSlider}>{list.title}</h2>
-                        <NormalSlider path={list.path}></NormalSlider>
+                        <NormalSlider path={list.path} type={list.type}></NormalSlider>
                     </div>
                 ))}
-                <NumberSlider path="/movie/upcoming"/>
+                <NumberSlider path="/movie/upcoming" type='movie'/>
             </div>
         </>
      );

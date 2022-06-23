@@ -9,15 +9,18 @@ import NumberSlider from '~/Layouts/DefaultLayOut/Sliders/NumberSlider';
 const bucketList = [
     {
         title:'TV Airing Today',
-        path:'/tv/airing_today'
+        path:'/tv/airing_today',
+        type: 'tv'
     },
     {
         title:'TV On The Air',
-        path:'/tv/on_the_air'
+        path:'/tv/on_the_air',
+        type: 'tv'
     },
     {
         title:'Popular',
-        path:'/tv/popular'
+        path:'/tv/popular',
+        type: 'tv'
     },
 ]
 
@@ -31,10 +34,10 @@ function TvShows() {
                 {bucketList.map((list,index)=>(
                     <div key={index} className={clsx(style.sliderContainer)}>
                         <h2 className={style.titleSlider}>{list.title}</h2>
-                        <NormalSlider path={list.path}></NormalSlider>
+                        <NormalSlider path={list.path} type={list.type}></NormalSlider>
                     </div>
                 ))}
-                <NumberSlider path="/movie/upcoming"/>
+                <NumberSlider path="/movie/upcoming" type='movie'/>
             </div>
         </>
      );

@@ -33,7 +33,7 @@ function Search() {
     return (
         <div className={clsx(style.wrapper)}>
             {list.map(movie=>(
-                <MovieBlock movie={movie} />
+                <MovieBlock movie={movie} type='movie' />
             ))}
         </div>
     )

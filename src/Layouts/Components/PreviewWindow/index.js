@@ -13,7 +13,7 @@ import { FaChevronDown } from "@react-icons/all-files/fa/FaChevronDown";
 
 import style from './PreviewWindow.module.scss'
 
-function PreviewWindow({thumb}) {
+function PreviewWindow({thumb,type}) {
         const [open,setOpen] = useState(false)
         const [timer,setTimer] = useState()
         const [play,setPlay] =useState(false)
@@ -48,10 +48,14 @@ function PreviewWindow({thumb}) {
           if(id===''){
             return
           }
-          fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=b2a1fd40807ef235498cc7e7fb8f529f`)
+          fetch(`https://api.themoviedb.org/3/${type}/${id}/videos?api_key=b2a1fd40807ef235498cc7e7fb8f529f`)
           .then(res=> res.json())
           .then(movie =>{
-              setTrailer(movie.results.find(element=>{return element.type ==='Trailer'}))
+              if(movie.results){
+                setTrailer(movie.results.find(element=>{return element.type ==='Trailer'}))
+              }else{
+                return
+              }
           })
         },[open])
         
@@ -66,7 +70,7 @@ function PreviewWindow({thumb}) {
           })} src={`https://www.themoviedb.org/t/p/original${thumb.backdrop_path}`} alt="" />
           <iframe title="netflix" className={clsx(style.ReviewVideo,{
             [style.ReviewHide] : play === false
-            })} src={`https://www.youtube.com/embed/${trailer.key}?autoplay=${pause}&mute=1&showinfo=0`} frameBorder="0">
+            })} src={ trailer && `https://www.youtube.com/embed/${trailer.key}?autoplay=${pause}&mute=1&showinfo=0`} frameBorder="0">
           </iframe>
     
         </div>

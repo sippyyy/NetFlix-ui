@@ -11,7 +11,7 @@ import { Pagination, Navigation } from "swiper";
 
 import request from '~/utils/httpRequest';
 import MovieBlock from '~/Layouts/Components/MovieBlock';
-function NormalSlider({path}) {
+function NormalSlider({path,type}) {
 
     const[list,setList] = useState([])
 
@@ -53,7 +53,7 @@ function NormalSlider({path}) {
             >
                 {list.map((movie,index)=>(
                     <SwiperSlide key={index}>
-                        <MovieBlock movie={movie} />
+                        <MovieBlock movie={movie} type={type} />
                     </SwiperSlide>
                 ))}
             </Swiper>
